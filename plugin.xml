@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.ht.edau.config.edauconfig.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="采集器配置软件"
+            class="com.ht.edau.config.perspective.Perspective"
+            id="com.ht.edau.config.perspective.Perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.ht.edau.config.view.MainTreeView"
+            id="com.ht.edau.config.view.MainTreeView"
+            name="配置树"
+            restorable="true">
+      </view>
+      <view
+            class="com.ht.edau.config.view.ChannelModelConfigView"
+            id="com.ht.edau.config.view.ChannelModelConfigView"
+            name="详细配置"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="edau-config.application"
+            name="edau-config.product">
+         <property
+               name="丹东华通采集器配置软件"
+               value="edau-config.product">
+         </property>
+         <property
+               name="appName"
+               value="edau-config.product">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
